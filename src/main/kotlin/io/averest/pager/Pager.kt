@@ -1,10 +1,11 @@
 package io.averest.pager
 
 import io.averest.pager.valueObject.PaginationIdentifier
+import io.averest.pager.valueObject.Pattern.pageIdentifier
 
 open class Pager(
     private val path: String,
-    pagesIdentifiers: PaginationIdentifier = PaginationIdentifier("\"?page\"?|seite|pageNumber"),
+    pagesIdentifiers: PaginationIdentifier = pageIdentifier,
     private val pageRegex: Regex = Regex("(?i)(.+(${pagesIdentifiers.identifier})([=:]))\"?(\\d{1,4})\"?(.+|\$)")
 ) {
     init {

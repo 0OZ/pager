@@ -2,10 +2,11 @@ package io.averest.pager.aggregate
 
 import io.averest.pager.Pager
 import io.averest.pager.valueObject.PaginationIdentifier
+import io.averest.pager.valueObject.Pattern
 
 class OffsetPager(
     private val path: String,
-    pagesIdentifiers: PaginationIdentifier = PaginationIdentifier("offset")
+    pagesIdentifiers: PaginationIdentifier = Pattern.offsetIdentifier
 ) : Pager(path, pagesIdentifiers) {
     private val pageSizeRegex = Regex(".+pageSize=(\\d+?)")
 
