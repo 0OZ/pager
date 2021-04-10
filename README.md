@@ -1,5 +1,7 @@
-# pager
-Kotlin pagination Regex
+# Pager
+
+small helper class to increment page numbers in strings
+
 
 
 ### Example
