@@ -9,7 +9,7 @@ open class Pager(
     private val pageRegex: Regex = Regex("(?i)(.+(${pagesIdentifiers.identifier})([=:]))\"?(\\d{1,4})\"?(.+|\$)")
 ) {
     init {
-        if (!path.contains(Regex("(?i)${pagesIdentifiers.identifier}"))) throw Exception("unknown page structure")
+        if (!path.contains(Regex("(?i)${pagesIdentifiers.identifier}"))) throw Exception("unknown page structure:\t$path")
     }
 
     fun incrementPage(): String {
