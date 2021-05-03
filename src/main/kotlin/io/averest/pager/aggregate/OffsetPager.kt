@@ -19,4 +19,6 @@ class OffsetPager(
         val currentPageIndex = extractPageIndex()
         return replacePage(currentPageIndex + addPageSize())
     }
+
+    fun replaceOffset(index: Int) = replacePage(index)
 }
