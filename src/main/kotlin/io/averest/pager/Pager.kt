@@ -12,15 +12,15 @@ open class Pager(
         if (!path.contains(Regex("(?i)${pagesIdentifiers.identifier}"))) throw Exception("unknown page structure:\t$path")
     }
 
-    fun incrementPage(): String {
+    open fun increment(): String {
         val currentPageIndex = extractPageIndex()
-        return replacePage(currentPageIndex + 1)
+        return replaceIndex(currentPageIndex + 1)
     }
 
     fun removeIndexFromUrl() =
         path.replace(pageRegex, "$1$5")
 
-    fun replacePage(index: Int) =
+    fun replaceIndex(index: Int) =
         path.replace(pageRegex, "$1$index$5")
 
     fun extractPageIndex(): Int {

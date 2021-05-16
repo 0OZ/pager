@@ -15,10 +15,8 @@ class OffsetPager(
         return pageSize.toInt()
     }
 
-    fun incrementOffset(): String {
+    override fun increment(): String {
         val currentPageIndex = extractPageIndex()
-        return replacePage(currentPageIndex + addPageSize())
+        return replaceIndex(currentPageIndex + addPageSize())
     }
-
-    fun replaceOffset(index: Int) = replacePage(index)
 }
